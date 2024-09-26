@@ -37,7 +37,6 @@ public class Main {
             System.out.println("N. Páginas: " + livro.getnPaginas());
             System.out.printf("\n");
         }
-        input.nextLine();
     }
 
     private static void pesquisarPorTitulo(){
@@ -49,6 +48,7 @@ public class Main {
         } catch(Exception e){
             System.out.println("Erro: " + e.getMessage());
         }
+        input.nextLine();
     }
 
     /*private static void removerPorTitulo(){
@@ -67,6 +67,7 @@ public class Main {
         var livros = biblio.pesquisarTodos();
         livros.sort(Comparator.comparing(Livro::getTitulo));
         listarInformacoes(livros);
+        input.nextLine();
     }
 
     private static void adicionar() {
