@@ -44,7 +44,6 @@ public class Biblioteca {
             if (livro.getTitulo().equalsIgnoreCase(titulo)){
                 acervo.remove(livro);
                 livroRemovido = true;
-                //System.out.println("Livro removido com sucesso");
                 break;
             }
         }
