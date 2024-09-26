@@ -38,17 +38,20 @@ public class Biblioteca {
         return livrosEncontrados;
     }
 
-    public void removerPorTitulo(String titulo){
+    /*public void removerPorTitulo(String titulo) throws Exception{
+        boolean livroRemovido = false;
         for (Livro livro : acervo) {
             if (livro.getTitulo().equalsIgnoreCase(titulo)){
                 acervo.remove(livro);
-                System.out.println("Livro removido com sucesso");
+                livroRemovido = true;
+                //System.out.println("Livro removido com sucesso");
                 break;
             }
-            
         }
-        
-    }
+
+        if(!livroRemovido)
+        throw new Exception("O livro não pertence ao acervo");
+    }*/
 
     public List<Livro> pesquisarTodos(){
         return this.acervo;

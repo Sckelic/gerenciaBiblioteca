@@ -51,6 +51,17 @@ public class Main {
         }
     }
 
+    /*private static void removerPorTitulo(){
+        System.out.print("Informe o título do livro a ser removido: ");
+        String tituloremove = input.nextLine();
+        try{
+            biblio.removerPorTitulo(tituloremove);
+            System.out.println("Livro removido com sucesso!!");
+        } catch(Exception e){
+            System.out.println("Erro: " + e.getMessage());
+        }
+    }*/
+
     private static void listar() {
         // List<Livro> livros = biblio.pesquisarTodos();
         var livros = biblio.pesquisarTodos();
@@ -123,7 +134,8 @@ public class Main {
                     break;
                 case 4:
                     clear();
-                    // remover
+                    removerPorTitulo();
+                    clear();
                     break;
                 default:
                     clear();
