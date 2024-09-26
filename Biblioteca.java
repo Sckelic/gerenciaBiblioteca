@@ -11,25 +11,31 @@ public class Biblioteca {
             throw new Exception("Não é permitido cadastrar livro sem titulo...");
         if (livro.getAutor() == null || livro.getAutor().isEmpty())
             throw new Exception("Não é possível cadastrar um livro sem autor...");
-        if (livro.getAnoPublicacao() <= 1400 && livro.getAnoPublicacao() > LocalDate.now().getYear())
+        if (livro.getAnoPublicacao() <= 1400 || livro.getAnoPublicacao() > LocalDate.now().getYear())
             throw new Exception("Não é um ano de publicacão válido...");
         if (livro.getnPaginas() <= 0)
             throw new Exception("Cadastre um livro com pelos menos uma página...");
         for (Livro livroAcervo : acervo) {
-            if (livroAcervo.getTitulo().equalsIgnoreCase(livro.getTitulo()));
+            if (livroAcervo.getTitulo().equalsIgnoreCase(livro.getTitulo()))
                 throw new Exception("Já existe um livro cadastrado com este titulo...");
         }
         acervo.add(livro);
     }
 
-    public List <Livro> pesquisarPorTitulo(String titulo){
+    public List <Livro> pesquisarPorTitulo(String titulo) throws Exception{
         List<Livro> livrosEncontrados = new ArrayList<>();
+        boolean livroExiste = false;
         for (Livro livro : acervo) {
             if (livro.getTitulo().toLowerCase().contains(titulo.toLowerCase())) {
                 livrosEncontrados.add(livro);
+                livroExiste = true;
             }
         }
-        return null;
+
+        if(!livroExiste)
+            throw new Exception("O livro não existe.");
+
+        return livrosEncontrados;
     }
 
     public void removerPorTitulo(String titulo){
