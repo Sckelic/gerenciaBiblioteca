@@ -6,6 +6,11 @@ public class Main {
     static Biblioteca biblio = new Biblioteca();
     static Scanner input = new Scanner(System.in);
 
+    public static void clear() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
     private static int inputNumerico(String mensagem) {
         int valor = 0;
         boolean entradaValida = false;
@@ -64,8 +69,9 @@ public class Main {
     }
 
     public static void main(String[] args) {
-
-        String menu = """
+        clear();
+        String menu = 
+            """
                 SISTEMA DE GERENCIAMENTO DE BIBLIOTECA
                 Escolha uma das opções:
                 1 - Adicionar novo livro;
@@ -73,7 +79,7 @@ public class Main {
                 3 - Pesquisar livro;
                 4 - Remover livro;
                 0 - Sair;
-                """;
+            """;
         int opcao;
         do {
             // System.out.println(menu);
@@ -82,12 +88,15 @@ public class Main {
             opcao = inputNumerico(menu);
             switch (opcao) {
                 case 0:
+                    clear();
                     System.out.println("VOLTE SEMPRE!!!");
                     break;
                 case 1:
+                    clear();
                     adicionar();
                     break;
                 case 2:
+                    clear();
                     listar();
                     break;
                 case 3:
