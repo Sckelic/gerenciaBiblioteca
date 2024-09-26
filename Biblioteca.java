@@ -38,7 +38,7 @@ public class Biblioteca {
         return livrosEncontrados;
     }
 
-    /*public void removerPorTitulo(String titulo) throws Exception{
+    public void removerPorTitulo(String titulo) throws Exception{
         boolean livroRemovido = false;
         for (Livro livro : acervo) {
             if (livro.getTitulo().equalsIgnoreCase(titulo)){
@@ -51,7 +51,7 @@ public class Biblioteca {
 
         if(!livroRemovido)
         throw new Exception("O livro não pertence ao acervo");
-    }*/
+    }
 
     public List<Livro> pesquisarTodos(){
         return this.acervo;

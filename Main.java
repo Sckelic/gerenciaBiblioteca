@@ -51,7 +51,7 @@ public class Main {
         input.nextLine();
     }
 
-    /*private static void removerPorTitulo(){
+    private static void removerPorTitulo(){
         System.out.print("Informe o título do livro a ser removido: ");
         String tituloremove = input.nextLine();
         try{
@@ -60,7 +60,8 @@ public class Main {
         } catch(Exception e){
             System.out.println("Erro: " + e.getMessage());
         }
-    }*/
+        input.nextLine();
+    }
 
     private static void listar() {
         // List<Livro> livros = biblio.pesquisarTodos();
