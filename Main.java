@@ -100,12 +100,15 @@ public class Main {
                     listar();
                     break;
                 case 3:
+                    clear();
                     // pesquisar por titulo
                     break;
                 case 4:
+                    clear();
                     // remover
                     break;
                 default:
+                    clear();
                     System.out.println("Opção Inválida!!!");
                     input.nextLine();
                     break;
