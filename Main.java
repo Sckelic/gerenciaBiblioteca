@@ -21,7 +21,7 @@ public class Main {
                 valor = Integer.parseInt(valorStr);
                 entradaValida = true;
             } catch (Exception e) {
-                System.out.println("Erro! informe um numero interio!");
+                System.out.println("Erro! informe um numero inteiro!");
             }
         } while (!entradaValida);
         return valor;

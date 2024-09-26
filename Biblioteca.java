@@ -8,16 +8,16 @@ public class Biblioteca {
 
     public void adicionar(Livro livro) throws Exception{
         if (livro.getTitulo() == null || livro.getTitulo().isEmpty())
-            throw new Exception("Nao e permitido cadastrar livro sem titulo");
+            throw new Exception("Não é permitido cadastrar livro sem titulo...");
         if (livro.getAutor() == null || livro.getAutor().isEmpty())
-            throw new Exception("Nao e possivel cadastrar um livro sem aultor");
+            throw new Exception("Não é possível cadastrar um livro sem autor...");
         if (livro.getAnoPublicacao() <= 1400 && livro.getAnoPublicacao() > LocalDate.now().getYear())
-            throw new Exception("Nao e um ano de publicacao valido");
+            throw new Exception("Não é um ano de publicacão válido...");
         if (livro.getnPaginas() <= 0)
-            throw new Exception("nao e possivel cadastrar um livro com menos ou igual a 0 paginas");
+            throw new Exception("Cadastre um livro com pelos menos uma página...");
         for (Livro livroAcervo : acervo) {
             if (livroAcervo.getTitulo().equalsIgnoreCase(livro.getTitulo()));
-                throw new Exception("Ja existe livro cadastrado com este titulo");
+                throw new Exception("Já existe um livro cadastrado com este titulo...");
         }
         acervo.add(livro);
     }
